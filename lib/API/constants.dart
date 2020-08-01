@@ -2,11 +2,11 @@ library constants;
 
 const API_BASIC_URL_FORMAT = 'https://opentdb.com/api.php?amount=10';
 
-const API_QUESTIONS_DIFFICULTY = ['easy', 'medium', 'hard'];
+const API_QUESTIONS_DIFFICULTY = ['Any', 'easy', 'medium', 'hard'];
+
+const API_QUESTIONS_AMOUNT = [10, 20, 30, 40, 50];
 
 const API_QUESTIONS_TYPE = ['multiple', 'boolean'];
-
-const API_MAX_GET_AMOUNT_QUESTIONS = 50;
 
 /**
  * Session Tokens are unique keys that will help keep track of the questions 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_app/Components/OptionsDialog.dart';
 import 'package:trivia_app/Models/categoryModel.dart';
 
 class CategoryList extends StatelessWidget {
@@ -34,8 +35,7 @@ class CategoryList extends StatelessWidget {
           children: <Widget>[
             ListTile(
               trailing: Icon(Icons.album, size: 20),
-              title: Text(
-                  category[index].name.replaceAll('Entertainment: ', ''),
+              title: Text(category[index].name,
                   style: TextStyle(color: Colors.white)),
               //subtitle: Text('', style: TextStyle(color: Colors.white)),
             ),
@@ -45,10 +45,24 @@ class CategoryList extends StatelessWidget {
                 'Play',
                 style: TextStyle(color: Colors.white),
               ),
-              onPressed: () {},
+              onPressed: () {
+                _categoryPressed(context, category[index]);
+              },
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  _categoryPressed(BuildContext context, CategoryClass category) {
+    showModalBottomSheet(
+      context: context,
+      builder: (sheetContext) => BottomSheet(
+        builder: (_) => OptionsDialog(
+          category: category,
+        ),
+        onClosing: () {},
       ),
     );
   }

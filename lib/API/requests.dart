@@ -5,7 +5,7 @@ import 'package:trivia_app/API/constants.dart';
 import 'package:trivia_app/Models/categoryModel.dart';
 import 'package:http/http.dart' as http;
 
-// A function that converts a response body into a List<Music>.
+// A function that converts a response body into a List<Category>.
 List<CategoryClass> parseCategory(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
