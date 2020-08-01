@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:trivia_app/API/constants.dart';
-import 'package:trivia_app/Models/category.dart';
+import 'package:trivia_app/Models/categoryModel.dart';
 import 'package:http/http.dart' as http;
 
 // A function that converts a response body into a List<Music>.

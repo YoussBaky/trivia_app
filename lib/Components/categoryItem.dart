@@ -1,48 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/API/requests.dart';
-import 'package:trivia_app/Models/category.dart';
-
-class BuildCategoryItem extends StatefulWidget {
-  const BuildCategoryItem({Key key, String name, int id}) : super(key: key);
-
-  @override
-  _BuildCategoryItemState createState() => _BuildCategoryItemState();
-}
-
-class _BuildCategoryItemState extends State<BuildCategoryItem> {
-  Future<List<CategoryClass>> futureCategory;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    futureCategory = fetchCategorys();
-  }
-
-  final someOtherSliver = SliverToBoxAdapter();
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      //color: Colors.red,
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.width,
-      alignment: Alignment.topRight,
-      child: Padding(
-        padding: const EdgeInsets.only(top: 280),
-        child: FutureBuilder<List<CategoryClass>>(
-          future: futureCategory,
-          builder: (context, snapshot) {
-            if (snapshot.hasError) print(snapshot.error);
-
-            return snapshot.hasData
-                ? CategoryList(category: snapshot.data)
-                : Center(child: CircularProgressIndicator());
-          },
-        ),
-      ),
-    );
-  }
-}
+import 'package:trivia_app/Models/categoryModel.dart';
 
 class CategoryList extends StatelessWidget {
   final List<CategoryClass> category;
@@ -51,12 +8,15 @@ class CategoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemCount: category.length,
+        itemBuilder: _buildCategoryItem,
       ),
-      itemCount: category.length,
-      itemBuilder: _buildCategoryItem,
     );
   }
 

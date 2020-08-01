@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:trivia_app/Components/categoryItem.dart';
+
+import 'package:trivia_app/category.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,7 +59,7 @@ class home extends StatelessWidget {
           alignment: Alignment.topCenter,
           overflow: Overflow.visible,
           children: <Widget>[
-            BuildCategoryItem(),
+            BuildCategory(),
             Stack(
               fit: StackFit.passthrough,
               alignment: Alignment.center,
