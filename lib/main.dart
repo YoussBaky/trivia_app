@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:trivia_app/Models/category.dart';
-import 'package:trivia_app/API/requests.dart';
+import 'package:trivia_app/Components/categoryItem.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,9 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          brightness: Brightness.dark),
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        brightness: Brightness.dark,
+      ),
       debugShowCheckedModeBanner: false,
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -36,15 +36,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<Gategory> futureCategory;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    futureCategory = fetchCategorys();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,34 +58,7 @@ class home extends StatelessWidget {
           alignment: Alignment.topCenter,
           overflow: Overflow.visible,
           children: <Widget>[
-            Container(
-              //color: Colors.red,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 280),
-                child: CustomScrollView(
-                  physics: BouncingScrollPhysics(),
-                  slivers: <Widget>[
-                    SliverPadding(
-                      padding: const EdgeInsets.all(16.0),
-                      sliver: SliverGrid(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: 1.2,
-                            crossAxisSpacing: 5,
-                            mainAxisSpacing: 5),
-                        delegate: SliverChildBuilderDelegate(
-                          _buildCategoryItem,
-                          childCount: 10,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            BuildCategoryItem(),
             Stack(
               fit: StackFit.passthrough,
               alignment: Alignment.center,
@@ -218,7 +182,8 @@ class home extends StatelessWidget {
                     child: CircleAvatar(
                       radius: 40.0 - 2,
                       backgroundImage: NetworkImage(
-                          'https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947_1280.jpg'),
+                        'https://cdn.pixabay.com/photo/2017/08/30/12/45/girl-2696947_1280.jpg',
+                      ),
                     ),
                   ),
                 ),
@@ -227,37 +192,6 @@ class home extends StatelessWidget {
           ],
         ),
       ],
-    );
-  }
-
-  Widget _buildCategoryItem(BuildContext context, int index) {
-    return Container(
-      alignment: Alignment.bottomRight,
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        color: Colors.pink,
-        elevation: 10,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            const ListTile(
-              trailing: Icon(Icons.album, size: 20),
-              title: Text('General Knowledge',
-                  style: TextStyle(color: Colors.white)),
-              //subtitle: Text('', style: TextStyle(color: Colors.white)),
-            ),
-            FlatButton(
-              child: const Text(
-                'Play',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
