@@ -64,7 +64,11 @@ class _OptionsDialogState extends State<OptionsDialog> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    return Quiz();
+                    return Quiz(
+                      category: widget.category,
+                      amount: questionAmount,
+                      difficulty: questionDifficulty,
+                    );
                   }),
                 );
               },

@@ -61,24 +61,24 @@ Card buildCard() {
               ],
             ),
           ),
-          new CircularPercentIndicator(
+          CircularPercentIndicator(
             radius: 80.0,
             lineWidth: 10.0,
             animation: true,
             percent: 0.7,
             backgroundColor: Colors.red,
-            center: new Text(
+            center: Text(
               "70.0%",
-              style: new TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 15.0,
               ),
             ),
             footer: Padding(
               padding: const EdgeInsets.only(bottom: 8.0),
-              child: new Text(
+              child: Text(
                 "Your best Score",
-                style: new TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 17.0,
                 ),
