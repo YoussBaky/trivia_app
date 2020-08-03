@@ -1,0 +1,123 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Board Games",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In a standard game of Monopoly, what colour are the two cheapest properties?",
+            "correct_answer": "Brown",
+            "incorrect_answers": [
+                "Green",
+                "Yellow",
+                "Blue"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which movie contains the quote, &quot;Say hello to my little friend!&quot;?",
+            "correct_answer": "Scarface",
+            "incorrect_answers": [
+                "Reservoir Dogs",
+                "Heat",
+                "Goodfellas"
+            ]
+        },
+        {
+            "category": "Entertainment: Cartoon & Animations",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which of these is NOT a Disney cartoon character?",
+            "correct_answer": "Daffy Duck",
+            "incorrect_answers": [
+                "Donald Duck",
+                "Daisy Duck",
+                "Scrooge McDuck"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the Italian word for &quot;tomato&quot;?",
+            "correct_answer": "Pomodoro",
+            "incorrect_answers": [
+                "Aglio",
+                "Cipolla",
+                "Peperoncino"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Five dollars is worth how many nickles?",
+            "correct_answer": "100",
+            "incorrect_answers": [
+                "50",
+                "25",
+                "69"
+            ]
+        },
+        {
+            "category": "Entertainment: Cartoon & Animations",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which of these characters from &quot;SpongeBob SquarePants&quot; is not a squid?",
+            "correct_answer": "Gary",
+            "incorrect_answers": [
+                "Orvillie",
+                "Squidward",
+                "Squidette"
+            ]
+        },
+        {
+            "category": "Geography",
+            "type": "boolean",
+            "difficulty": "medium",
+            "question": "The title of the 1969 film &quot;Krakatoa, East_of Java&quot; is incorrect, as Krakatoa is in fact west of Java.",
+            "correct_answer": "True",
+            "incorrect_answers": [
+                "False"
+            ]
+        },
+        {
+            "category": "Entertainment: Video Games",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In &quot;Kingdom Hearts&quot;, what is the name of Sora&#039;s home world?",
+            "correct_answer": "Destiny Islands",
+            "incorrect_answers": [
+                "Agrabah",
+                "Land of Departure",
+                "Disney Town"
+            ]
+        },
+        {
+            "category": "Entertainment: Japanese Anime & Manga",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which part from the JoJo&#039;s Bizarre Adventure manga is about a horse race across America?",
+            "correct_answer": "Part 7: Steel Ball Run",
+            "incorrect_answers": [
+                "Part 6: Stone Ocean",
+                "Part 3: Stardust Crusaders",
+                "Part 5: Golden Wind"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "The word &quot;aprosexia&quot; means which of the following?",
+            "correct_answer": "The inability to concentrate on anything",
+            "incorrect_answers": [
+                "The inability to make decisions",
+                "A feverish desire to rip one&#039;s clothes off",
+                "The inability to stand up"
+            ]
+        }
+    ]
+}

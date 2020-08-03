@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_app/API/constants.dart';
 import 'package:trivia_app/Models/categoryModel.dart';
+import 'package:trivia_app/quiz.dart';
 
 class OptionsDialog extends StatefulWidget {
   OptionsDialog({Key key, this.category}) : super(key: key);
@@ -59,7 +60,14 @@ class _OptionsDialogState extends State<OptionsDialog> {
                 borderRadius: BorderRadius.circular(20.0),
               ),
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return Quiz();
+                  }),
+                );
+              },
             ),
           ),
         ],

@@ -8,6 +8,6 @@ class CategoryClass {
   }
 
   factory CategoryClass.fromJson(Map<String, dynamic> json) {
-    return CategoryClass(json['id'] as int, json['name'] as String);
+    return CategoryClass(json['id'] as int, json['name']);
   }
 }
